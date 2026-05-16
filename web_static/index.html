@@ -1,129 +1,848 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>AirBnB clone</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kelvin Barasa — Software Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:        #f5efe6;
+      --bg2:       #ede4d7;
+      --surface:   #e8ddd0;
+      --border:    #c9b99a;
+      --text:      #2c2018;
+      --text-muted:#7a6653;
+      --accent:    #8b4f1e;
+      --accent2:   #c47d3e;
+      --accent3:   #4a7c59;
+      --cream:     #faf6f0;
+      --shadow:    rgba(44,32,24,0.12);
+    }
 
-		<link rel="shortcut icon" href="images/icon.ico" >
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<link rel="stylesheet" href="styles/4-common.css"/>
-		<link rel="stylesheet" href="styles/3-header.css"/>
-		<link rel="stylesheet" href="styles/3-footer.css"/>
-		<link rel="stylesheet" href="styles/6-filters.css"/>
-		<link rel="stylesheet" href="styles/8-places.css"/>
-	</head>
-    <body>
-		<header>
-			<div id="header_logo"></div>
-		</header>
-		<div class="container">
-			<section class="filters">
-				<button>Search</button>
-				<div class="locations">
-					<h3>States</h3>
-					<h4>California, Arizona...</h4>
-					<ul class="popover">
-						<li><h2>Arizona</h2>
-							<ul>
-								<li><h4>Page</h4></li>
-								<li><h4>Page2</h4></li>
-							</ul></li>
-						<li><h2>California</h2>
-							<ul>
-								<li><h4>San Francisco</h4></li>
-								<li><h4>Los Altos</h4></li>
-							</ul></li>
-					</ul>
-				</div>
-				<div class="amenities">
-					<h3>Amenities</h3>
-					<h4>Internet, Kitchen...</h4>
-					<ul class="popover">
-						<li><h4>Internet</h4></li>
-						<li><h4>TV</h4></li>
-						<li><h4>Kitchen</h4></li>
-						<li><h4>Iron</h4></li>
-					</ul>
-				</div>
+    html { scroll-behavior: smooth; }
 
-			</section>
-			<section class="places">
-				<h1>Places</h1>
-				<article>
-					<div class="headline">
-						<h2>My home</h2>
-						<div class="price_by_night">$80</div>
-					</div>
-					<div class="information">
-						<div class="max_guest">
-							<div class="guest_icon"></div>
-							<p>2 Guests</p>
-						</div>
-						<div class="number_rooms">
-							<div class="bed_icon"></div>
-							<p>1 Bedroom</p>
-						</div>
-						 <div class="number_bathrooms">
-							<div class="bath_icon"></div>
-							<p>1 Bathroom</p>
-						</div>
-					</div>
-					<div class="user"><b>Owner</b>: John Lennon</div>
-					<div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </div>
-				</article>
-				<article>
-					<div class="headline">
-						<h2>Tiny house</h2>
-						<div class="price_by_night">$65</div>
-					</div>
-					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>4 Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>2 Bedroom</p>
-                        </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>1 Bathroom</p>
-                        </div>
-                    </div>
-					<div class="user"><b>Owner</b>: Adrienne</div>
-					<div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
-				</article>
-				<article>
-					<div class="headline">
-						<h2>A suite</h2>
-						<div class="price_by_night">$180</div>
-					</div>
-					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>5 Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>3 Bedroom</p>
-                        </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>2 Bathroom</p>
-                        </div>
-                    </div>
-					<div class="user"><b>Owner</b>: Betty Holberton</div>
-					<div class="description">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</div>
-				</article>
-			</section>
-		</div>
-		<footer>
-			<p>Holberton School</p>
-		</footer>
-	</body>
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Lora', Georgia, serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(245,239,230,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 4rem;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      right: -10%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55vw;
+      height: 55vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--surface) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-text { position: relative; z-index: 2; }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      border: 1px solid var(--accent2);
+      padding: 0.3rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 42ch;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--cream);
+      padding: 0.85rem 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent2);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      padding: 0.85rem 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .code-card {
+      background: var(--text);
+      color: #e8ddd0;
+      border-radius: 12px;
+      padding: 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      line-height: 1.9;
+      box-shadow: 0 24px 80px var(--shadow);
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+    }
+
+    .code-card::before {
+      content: '● ● ●';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 0.65rem;
+      color: #7a6653;
+      letter-spacing: 0.3em;
+    }
+
+    .code-card pre { margin-top: 1.5rem; white-space: pre-wrap; }
+
+    .c-kw  { color: #c47d3e; }
+    .c-fn  { color: #8bc47d; }
+    .c-str { color: #e8c47d; }
+    .c-cm  { color: #7a8a78; font-style: italic; }
+    .c-num { color: #c4a87d; }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 7rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      line-height: 1.15;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, var(--border), transparent);
+      margin: 0 auto;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 7rem 4rem;
+    }
+
+    .about-body p {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .about-body p strong { color: var(--text); font-weight: 500; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg2); }
+    #skills > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+    .skills-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 7rem 4rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .skill-category:hover {
+      box-shadow: 0 12px 40px var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .skill-cat-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-cat-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      padding: 0.25rem 0.7rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--text-muted);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 16px 50px var(--shadow);
+      transform: translateY(-5px);
+    }
+
+    .project-banner {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      opacity: 0.15;
+    }
+
+    .pb-1 { background: linear-gradient(135deg, #8b4f1e 0%, #c47d3e 100%); }
+    .pb-2 { background: linear-gradient(135deg, #4a7c59 0%, #7db89a 100%); }
+    .pb-3 { background: linear-gradient(135deg, #5c4a2a 0%, #9a7a4a 100%); }
+
+    .project-body { padding: 1.8rem; }
+
+    .project-type {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.65;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+
+    .project-link:hover { color: var(--accent2); border-color: var(--accent2); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--text);
+      color: var(--cream);
+      padding: 7rem 4rem;
+    }
+
+    .contact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    #contact .section-label { color: var(--accent2); }
+    #contact .section-title { color: var(--cream); margin-bottom: 1.5rem; }
+
+    .contact-sub {
+      color: #9a8070;
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: #c9b99a;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+      padding: 1rem 1.5rem;
+      border: 1px solid #3d2e22;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .contact-item:hover { color: var(--cream); border-color: var(--accent2); }
+
+    .contact-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+    .contact-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-style: italic;
+      color: #4a3a30;
+      line-height: 1.3;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .contact-quote::before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -0.3rem;
+      font-size: 4rem;
+      color: var(--accent);
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a110a;
+      color: #5a4a3a;
+      text-align: center;
+      padding: 2rem 4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 8rem 1.5rem 4rem;
+        text-align: center;
+      }
+
+      #hero::after { display: none; }
+
+      .hero-cta { justify-content: center; }
+      .hero-visual { display: none; }
+
+      #about {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 2.5rem;
+      }
+
+      section, .skills-section { padding: 4rem 1.5rem; }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      #contact { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">KB</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <span class="hero-tag">Available for work</span>
+    <h1 class="hero-name">Kelvin<br/><em>Barasa</em></h1>
+    <p class="hero-desc">
+      Software developer who finds genuine joy in writing clean, purposeful code. Building things that work elegantly and feel just right.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="code-card">
+      <pre><span class="c-cm">// kelvin_barasa.js</span>
+
+<span class="c-kw">const</span> <span class="c-fn">developer</span> = {
+  name: <span class="c-str">"Kelvin Barasa"</span>,
+  role: <span class="c-str">"Software Developer"</span>,
+  passions: [
+    <span class="c-str">"clean code"</span>,
+    <span class="c-str">"problem solving"</span>,
+    <span class="c-str">"open source"</span>,
+  ],
+  yearsOfExp: <span class="c-num">3</span>,
+  available: <span class="c-kw">true</span>,
+};
+
+<span class="c-fn">console</span>.log(<span class="c-str">"Let's build something."</span>);</pre>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">A developer who<br/><em>loves the craft</em></h2>
+
+    <div class="about-stats">
+      <div class="stat-box reveal">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-box reveal">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Projects Shipped</div>
+      </div>
+      <div class="stat-box reveal">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Lines of Code</div>
+      </div>
+      <div class="stat-box reveal">
+        <div class="stat-num">☕</div>
+        <div class="stat-label">Cups of Coffee</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-body reveal">
+    <p>Hi, I'm <strong>Kelvin Barasa</strong> — a software developer based in Kenya with a deep love for writing code that's not just functional, but well-crafted.</p>
+    <p>I thrive on turning complex problems into simple, elegant solutions. Whether it's a full-stack web application or a CLI tool that saves hours of manual work, I bring the same care and attention to everything I build.</p>
+    <p>When I'm not at the keyboard, I'm probably reading about emerging technologies, contributing to open-source projects, or mentoring fellow developers in the community.</p>
+    <p><strong>Currently open to freelance and full-time opportunities.</strong> Let's build something meaningful together.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<div id="skills" style="background: var(--bg2);">
+  <div class="skills-section">
+    <p class="section-label reveal">Expertise</p>
+    <h2 class="section-title reveal">What I work with</h2>
+
+    <div class="skills-grid">
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">🖥️</div>
+        <div class="skill-cat-title">Frontend</div>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML & CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Vue.js</span>
+          <span class="skill-tag">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">⚙️</div>
+        <div class="skill-cat-title">Backend</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Express</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">GraphQL</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">🗄️</div>
+        <div class="skill-cat-title">Databases</div>
+        <div class="skill-tags">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">SQLite</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">🚀</div>
+        <div class="skill-cat-title">DevOps & Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Vercel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label reveal">Portfolio</p>
+  <h2 class="section-title reveal">Things I've built</h2>
+
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-banner pb-1">🏗️</div>
+      <div class="project-body">
+        <div class="project-type">Full Stack Web App</div>
+        <h3 class="project-title">Project One</h3>
+        <p class="project-desc">A scalable web application built with React and Node.js. Features real-time updates, authentication, and a clean REST API backend. Replace this with your actual project description.</p>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-banner pb-2">🌿</div>
+      <div class="project-body">
+        <div class="project-type">API & Backend</div>
+        <h3 class="project-title">Project Two</h3>
+        <p class="project-desc">A high-performance REST API built with Python and FastAPI. Designed for scalability with PostgreSQL, Docker containerization, and automated CI/CD pipelines.</p>
+        <div class="project-links">
+          <a href="#" class="project-link">Documentation</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-banner pb-3">🔧</div>
+      <div class="project-body">
+        <div class="project-type">Open Source Tool</div>
+        <h3 class="project-title">Project Three</h3>
+        <p class="project-desc">A developer productivity tool that automates repetitive workflows. Built with TypeScript, published on npm, and used by developers worldwide to save time.</p>
+        <div class="project-links">
+          <a href="#" class="project-link">npm Package</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="contact-inner">
+    <div>
+      <p class="section-label">Let's Talk</p>
+      <h2 class="section-title">Got a project<br/>in mind?</h2>
+      <p class="contact-sub">I'm always open to interesting projects, collaborations, or just a good conversation about code.</p>
+
+      <div class="contact-links">
+        <a href="mailto:officialbarasa@gmail.com" class="contact-item">
+          <span class="contact-icon">✉️</span>
+          officialbarasa@gmail.com
+        </a>
+        <a href="https://github.com/" target="_blank" class="contact-item">
+          <span class="contact-icon">⚡</span>
+          github.com/Barasa2023
+        </a>
+        <a href="https://linkedin.com/" target="_blank" class="contact-item">
+          <span class="contact-icon">💼</span>
+          linkedin.com/in/kelvinbarasa
+        </a>
+        <a href="https://twitter.com/" target="_blank" class="contact-item">
+          <span class="contact-icon">🐦</span>
+          @kelly_erima
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <p class="contact-quote">
+        Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+      </p>
+      <p style="font-family:'DM Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; color:#5a4a3a; margin-top: 1.5rem;">— Martin Fowler</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Kelvin Barasa &nbsp;·&nbsp; Designed & built with care &nbsp;·&nbsp; Mombasa, Kenya</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
 </html>
